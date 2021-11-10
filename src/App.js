@@ -9,8 +9,12 @@ class App extends React.Component {
     newUsername: ""
   }
 
-  handleChange = (event) => {
-    this.setState({newUsername: event.target.value})
+handleChange = (event) => {
+  this.setState({newUsername: event.target.value})
+}
+
+handleSubmit = () => {
+  console.log("submitted")
 }
 
   render() {
@@ -18,6 +22,11 @@ class App extends React.Component {
         <div className="App">
           
           <Header/>
+          <Usercontextconsumer>
+          <form
+            name="form"
+            onSubmit={this.handleSubmit}
+          >
           <input
                 type="text"
                 name="username"
@@ -25,6 +34,12 @@ class App extends React.Component {
                 value={this.state.value}
                 onChange={this.handleChange}
             />
+            <button
+              action="submit"
+            >
+            Change Username</button>
+            </form>
+            </Usercontextconsumer>
             <p>{this.state.newUsername}</p>
            
           

@@ -9,7 +9,7 @@ class Header extends React.Component {
                 <Usercontextconsumer>
                     {context => (
                         <header>
-                        <p>Welcome, {context} 🎉!</p>
+                        <p>Welcome, {context.username} 🎉!</p>
                     </header>
                     )}
                 </Usercontextconsumer>
