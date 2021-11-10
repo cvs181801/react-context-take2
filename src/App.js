@@ -9,11 +9,9 @@ class App extends React.Component {
     newUsername: ""
   }
 
-  handleChange(event) {
-    const {name, value} = event.target;
-    this.setState({[name]:value})
-
-  }
+  handleChange = (event) => {
+    this.setState({newUsername: event.target.value})
+}
 
   render() {
       return (
@@ -24,7 +22,7 @@ class App extends React.Component {
                 type="text"
                 name="username"
                 placeholder="New username"
-                value={this.state.newUsername}
+                value={this.state.value}
                 onChange={this.handleChange}
             />
             <p>{this.state.newUsername}</p>
