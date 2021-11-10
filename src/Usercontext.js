@@ -8,12 +8,12 @@ class Usercontextprovider extends React.Component {
         username: "Bobbi"
     }
 
-    changeUsername(username) {
-        this.setState({username: username})
+    changeUsername = (username) => {
+        this.setState({username})
     }
-    
+
     render() {
-        console.log(this.state.username)
+        //console.log(this.state.username)
         return(
             <Provider value={{username: this.state.username, changeUsername: this.changeUsername}}>
                 {this.props.children}
