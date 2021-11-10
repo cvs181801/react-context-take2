@@ -13,20 +13,16 @@ handleChange = (event) => {
   this.setState({newUsername: event.target.value})
 }
 
-handleSubmit = () => {
-  console.log("submitted")
-}
-
   render() {
       return (
         <div className="App">
           
           <Header/>
           <Usercontextconsumer>
-          <form
-            name="form"
-            onSubmit={this.handleSubmit}
-          >
+            {({username, changeUsername}) => (
+              
+          <main>
+            {console.log(username)}
           <input
                 type="text"
                 name="username"
@@ -35,10 +31,11 @@ handleSubmit = () => {
                 onChange={this.handleChange}
             />
             <button
-              action="submit"
+              onClick={()=> changeUsername(this.state.newUsername)}
             >
             Change Username</button>
-            </form>
+            </main>
+            )}
             </Usercontextconsumer>
             <p>{this.state.newUsername}</p>
            
